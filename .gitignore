@@ -25,12 +25,13 @@
 *.la
 *.a
 *.lib
-ex00/Bureaucrat
 
 # Executables
 *.exe
 *.out
 *.app
+ex00/Bureaucrat
+ex01/Form
 
 # Mist
 .vscode
