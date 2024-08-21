@@ -6,7 +6,7 @@
 /*   By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 21:59:50 by ibertran          #+#    #+#             */
-/*   Updated: 2024/08/20 22:59:11 by ibertran         ###   ########lyon.fr   */
+/*   Updated: 2024/08/21 00:46:38 by ibertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ std::string	Bureaucrat::getName(void) const
 	return (this->_name);
 }
 
-int	Bureaucrat::getGrade(void) const
+unsigned int	Bureaucrat::getGrade(void) const
 {
 	return (this->_grade);
 }

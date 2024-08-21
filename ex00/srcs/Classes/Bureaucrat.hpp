@@ -6,7 +6,7 @@
 /*   By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 21:59:34 by ibertran          #+#    #+#             */
-/*   Updated: 2024/08/20 22:59:18 by ibertran         ###   ########lyon.fr   */
+/*   Updated: 2024/08/21 00:46:25 by ibertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,11 @@
 # include <string>
 # include <iostream>
 
-# define BUREAUCRAT_DEFAULT_NAME "unnamed"
-# define BUREAUCRAT_DEFAULT_GRADE 150
-
-# define BUREAUCRAT_MIN_GRADE 150
-# define BUREAUCRAT_MAX_GRADE 1
-
-# define GRADE_TOO_HIGH_EXCEPTION "Bureaucrat grade too high"
-# define GRADE_TOO_LOW_EXCEPTION "Bureaucrat grade too low"
-
 class Bureaucrat
 {
 	private:
 		const std::string	_name;
-		int			_grade;
+		unsigned int		_grade;
 
 	public:
 		Bureaucrat(void);
@@ -41,7 +32,7 @@ class Bureaucrat
 		Bureaucrat	&operator=(const Bureaucrat &);
 
 		std::string		getName(void) const;
-		int		getGrade(void) const;
+		unsigned int	getGrade(void) const;
 
 		void			upGrade(void);
 		void			downGrade(void);
@@ -60,5 +51,14 @@ class Bureaucrat
 };
 
 std::ostream	&operator<<(std::ostream &, const Bureaucrat &);
+
+# define BUREAUCRAT_DEFAULT_NAME "unnamed"
+# define BUREAUCRAT_DEFAULT_GRADE 150
+
+# define BUREAUCRAT_MIN_GRADE 150
+# define BUREAUCRAT_MAX_GRADE 1
+
+# define GRADE_TOO_HIGH_EXCEPTION "Bureaucrat grade too high"
+# define GRADE_TOO_LOW_EXCEPTION "Bureaucrat grade too low"
 
 #endif /* ******************************************************************* */
