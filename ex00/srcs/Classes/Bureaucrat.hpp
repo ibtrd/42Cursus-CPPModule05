@@ -6,7 +6,7 @@
 /*   By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 21:59:34 by ibertran          #+#    #+#             */
-/*   Updated: 2024/08/21 00:46:25 by ibertran         ###   ########lyon.fr   */
+/*   Updated: 2024/08/21 03:18:22 by ibertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,13 @@ class Bureaucrat
 
 		class GradeTooHighException : public std::exception
 		{
-			private:
+			public:
 				const char *what() const throw();
 		};
 
 		class GradeTooLowException : public std::exception
 		{
-			private:
+			public:
 				const char *what() const throw();
 		};
 };

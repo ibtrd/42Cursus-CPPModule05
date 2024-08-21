@@ -6,7 +6,7 @@
 /*   By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 00:10:24 by ibertran          #+#    #+#             */
-/*   Updated: 2024/08/21 02:55:31 by ibertran         ###   ########lyon.fr   */
+/*   Updated: 2024/08/21 03:17:36 by ibertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,19 +45,19 @@ class Form
 		
 		class GradeTooHighException : public std::exception
 		{
-			private:
+			public:
 				const char *what() const throw();
 		};
 
 		class GradeTooLowException : public std::exception
 		{
-			private:
+			public:
 				const char *what() const throw();
 		};
 
 		class AlreadySignedException : public std::exception
 		{
-			private:
+			public:
 				const char *what() const throw();
 		};
 };
