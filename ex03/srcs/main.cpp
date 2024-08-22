@@ -6,7 +6,7 @@
 /*   By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 21:59:17 by ibertran          #+#    #+#             */
-/*   Updated: 2024/08/22 22:00:54 by ibertran         ###   ########lyon.fr   */
+/*   Updated: 2024/08/22 22:37:44 by ibertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int main(void)
 	
 	Intern		intern;
 	try {
-		Bureaucrat	bureaucrat("mjuffard", 1);
+		Bureaucrat	bureaucrat("mjuffard", 0);
 
 		test("shrubbery creation", "home", bureaucrat, intern);
 		std::cout << std::endl;
@@ -50,9 +50,6 @@ int main(void)
 		test("dlkdjkdfjgfdgjdgf", "home", bureaucrat, intern);
 	}
 	catch (std::exception &e) {
-
+		std::cout << "test failure: " << e.what() << std::endl;
 	}
-
-
-
 }
