@@ -6,7 +6,7 @@
 /*   By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 21:59:34 by ibertran          #+#    #+#             */
-/*   Updated: 2024/08/21 17:13:45 by ibertran         ###   ########lyon.fr   */
+/*   Updated: 2024/08/22 14:46:38 by ibertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ class Bureaucrat
 
 		void			upGrade(void);
 		void			downGrade(void);
-		void			signForm(AForm &);
+		void			signForm(AForm &) const;
+		void			executeForm(const AForm &) const;
 
 		class GradeTooHighException : public std::exception
 		{

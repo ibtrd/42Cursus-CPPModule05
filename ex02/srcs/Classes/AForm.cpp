@@ -65,6 +65,17 @@ void	AForm::beSigned(const Bureaucrat &bureaucrat)
 	this->_signed = true;
 }
 
+void	AForm::execute(const Bureaucrat &executor) const
+{
+	if (!this->_signed) {
+		throw UnsignedException();
+	}
+	if (executor.getGrade() > this->_executeGrade) {
+		throw GradeTooLowException();
+	}
+	this->action();
+}
+
 /* GETTERS ****************************************************************** */
 
 std::string	AForm::getName(void) const {
@@ -95,6 +106,10 @@ const char *AForm::GradeTooLowException::what() const throw() {
 
 const char *AForm::AlreadySignedException::what() const throw() {
 	return (ALREADY_SIGNED_EXCEPTION);
+}
+
+const char *AForm::UnsignedException::what() const throw() {
+	return (UNSIGNED_EXCEPTION);
 }
 
 /* ************************************************************************** */

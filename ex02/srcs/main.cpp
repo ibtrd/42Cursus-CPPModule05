@@ -6,71 +6,75 @@
 /*   By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 21:59:17 by ibertran          #+#    #+#             */
-/*   Updated: 2024/08/21 17:13:45 by ibertran         ###   ########lyon.fr   */
+/*   Updated: 2024/08/22 17:28:54 by ibertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include <stdlib.h>
+#include <cstdlib>
+#include <ctime>
 
-void	trySign(const char n, const unsigned int signGrade, const unsigned int executeGrade)
-{
-	std::string formName = "form-";
-	formName += n;
-	try {
-		Bureaucrat	me("ibertran", 42);
-		std::cout << me << std::endl;
-		AForm		form(formName, signGrade, executeGrade);
-		std::cout << form << std::endl;
-		me.signForm(form);
-		std::cout << form << std::endl;
-	} catch (std::exception &e) {
-		std::cout << formName << " " << e.what() << std::endl;
-	}
-	std::cout << std::endl;
-}
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
-void	tryForm(const char n, const unsigned int signGrade, const unsigned int executeGrade)
+void	test(
+	const std::string &target,
+	const std::string &bureaucratName,
+	const int bureaucratGrade
+	)
 {
-	std::string formName = "form-";
-	formName += n;
-	try {
-		AForm	form(formName, signGrade, executeGrade);
-		std::cout << form << std::endl;
-	} catch (std::exception &e) {
-		std::cout << formName << " " << e.what() << std::endl;
+	try 
+	{
+		Bureaucrat				bureaucrat(bureaucratName, bureaucratGrade);
+		ShrubberyCreationForm	shrub(target);
+		RobotomyRequestForm		robot(target);
+		PresidentialPardonForm	pres(target);
+		std::cout 
+			<< bureaucrat << "\n"
+			<< shrub << "\n"
+			<< robot << "\n"
+			<< pres << "\n" << std::endl;
+
+		bureaucrat.signForm(shrub);
+		bureaucrat.executeForm(shrub);
+		std::cout << shrub << "\n" << std::endl;
+
+		bureaucrat.signForm(robot);
+		bureaucrat.executeForm(robot);
+		std::cout << robot << "\n" << std::endl;
+
+		bureaucrat.signForm(pres);
+		bureaucrat.executeForm(pres);
+		std::cout << pres << "\n" << std::endl;
 	}
-	std::cout << std::endl;
+	catch (std::exception &e) {
+		std::cout << "test failed: " << e.what() << std::endl;
+	}
 }
 
 int main(void)
 {
-	char n = 'A';
+	srand(time(NULL));
+	
+	test("beaver", "rgeral", 135);
+	std::cout << "\n" << std::endl;
 
-	tryForm(n++, 42, 42);
-	tryForm(n++, 150, 1);
-	tryForm(n++, 1, 150);
+	test("foal", "lrio", 65);
+	std::cout << "\n" << std::endl;
 
-	tryForm(n++, 151, 42);
-	tryForm(n++, 0, 42);
-	tryForm(n++, 42, 151);
-	tryForm(n++, 42, 0);
+	test("nanou", "anfichet", 3);
 
-	trySign(n++, 5, 21);
-	trySign(n++, 65, 21);
-	trySign(n++, 42, 21);
+	try
+	{
+		Bureaucrat				me("ibertran", 1);
+		PresidentialPardonForm	form("cdomet-d");
 
-	std::string formName = "form-";
-	formName += n;
-	try {
-		Bureaucrat	me("ibertran", 42);
-		std::cout << me << std::endl;
-		AForm		form(formName, 42, 21);
-		std::cout << form << std::endl;
-		me.signForm(form);
-		std::cout << form << std::endl;
-		me.signForm(form);
-	} catch (std::exception &e) {
-		std::cout << formName << " " << e.what() << std::endl;
+		std::cout 
+			<< me << "\n"
+			<< form << "\n" << std::endl;
+		me.executeForm(form);
+	}
+	catch (std::exception &e) {
+		std::cout << "test failed: " << e.what() << std::endl;
 	}
 }

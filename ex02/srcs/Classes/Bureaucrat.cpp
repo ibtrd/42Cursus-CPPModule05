@@ -6,7 +6,7 @@
 /*   By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 21:59:50 by ibertran          #+#    #+#             */
-/*   Updated: 2024/08/21 17:13:45 by ibertran         ###   ########lyon.fr   */
+/*   Updated: 2024/08/22 16:56:04 by ibertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	Bureaucrat::downGrade(void)
 	this->_grade++;
 }
 
-void	Bureaucrat::signForm(AForm &form)
+void	Bureaucrat::signForm(AForm &form) const
 {
 	try
 	{
@@ -82,6 +82,18 @@ void	Bureaucrat::signForm(AForm &form)
 	}
 	catch (std::exception &e) {
 		std::cout << this->_name << " couldn't sign " << form.getName() << " : " << e.what() << std::endl;
+	}
+}
+
+void	Bureaucrat::executeForm(const AForm &form) const
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->_name << " executed " << form.getName() << std::endl;
+	}
+	catch (std::exception &e) {
+		std::cout << this->_name << " couldn't execute " << form.getName() << " : " << e.what() << std::endl;
 	}
 }
 

@@ -42,6 +42,8 @@ class AForm
 		unsigned int	getExecuteGrade(void) const;
 
 		void			beSigned(const Bureaucrat &);
+		void			execute(const Bureaucrat &) const;
+		virtual void	action(void) const = 0;
 		
 		class GradeTooHighException : public std::exception
 		{
@@ -60,11 +62,18 @@ class AForm
 			public:
 				const char *what() const throw();
 		};
+
+		class UnsignedException : public std::exception
+		{
+			public:
+				const char *what() const throw();
+		};
 };
 
 std::ostream	&operator<<(std::ostream &os, const AForm &form);
 
 # define FORM_DEFAULT_NAME "unnamed form"
 # define ALREADY_SIGNED_EXCEPTION "already signed form"
+# define UNSIGNED_EXCEPTION "unsigned form"
 
 #endif /* ******************************************************************* */

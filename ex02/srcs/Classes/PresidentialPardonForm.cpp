@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,33 +11,34 @@
 /* ************************************************************************** */
 
 #include <fstream>
+#include <cstdlib>
 
-#include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 /* CONSTRUCTORS ************************************************************* */
 
-ShrubberyCreationForm::ShrubberyCreationForm(void)
-	: AForm(SHRUBBERYCREATION_FORM_NAME, SHRUBBERYCREATION_SIGN_GRADE, SHRUBBERYCREATION_EXEC_GRADE)
+PresidentialPardonForm::PresidentialPardonForm(void)
+	: AForm(PRESIDENTIALPARDON_FORM_NAME, PRESIDENTIALPARDON_SIGN_GRADE, PRESIDENTIALPARDON_EXEC_GRADE)
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
-	: AForm(SHRUBBERYCREATION_FORM_NAME, SHRUBBERYCREATION_SIGN_GRADE, SHRUBBERYCREATION_EXEC_GRADE)
+PresidentialPardonForm::PresidentialPardonForm(const std::string &target)
+	: AForm(PRESIDENTIALPARDON_FORM_NAME, PRESIDENTIALPARDON_SIGN_GRADE, PRESIDENTIALPARDON_EXEC_GRADE)
 {
 	this->_target = target;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other)
-	: AForm(SHRUBBERYCREATION_FORM_NAME, SHRUBBERYCREATION_SIGN_GRADE, SHRUBBERYCREATION_EXEC_GRADE)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &other)
+	: AForm(PRESIDENTIALPARDON_FORM_NAME, PRESIDENTIALPARDON_SIGN_GRADE, PRESIDENTIALPARDON_EXEC_GRADE)
 {
 	*this = other;
 }
 
-ShrubberyCreationForm::~ShrubberyCreationForm(void) {}
+PresidentialPardonForm::~PresidentialPardonForm(void) {}
 
 /* OPERATOR OVERLOADING ***************************************************** */
 
-ShrubberyCreationForm	&ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other)
+PresidentialPardonForm	&PresidentialPardonForm::operator=(const PresidentialPardonForm &other)
 {
 	if (this == &other)
 		return (*this);
@@ -47,21 +48,14 @@ ShrubberyCreationForm	&ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 /* ************************************************************************** */
 
-void 	ShrubberyCreationForm::action(void) const
+void 	PresidentialPardonForm::action(void) const
 {
-	std::string		filename("./");
-
-	filename.append(this->_target);
-	filename.append("_shrubbery");
-	std::ofstream	out(filename.c_str());
-	if (out.is_open()) {
-		out << SHRUBBERY_ASCII_ART << SHRUBBERY_ASCII_ART;	
-	}
+	std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox!" << std::endl;
 }
 
 /* GETTERS ****************************************************************** */
 
-std::string	ShrubberyCreationForm::getTarget(void) const
+std::string	PresidentialPardonForm::getTarget(void) const
 {
 	return (this->_target);
 }

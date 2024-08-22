@@ -6,7 +6,7 @@
 #    By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/13 22:47:55 by ibertran          #+#    #+#              #
-#    Updated: 2024/08/21 17:25:05 by ibertran         ###   ########lyon.fr    #
+#    Updated: 2024/08/22 15:49:45 by ibertran         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,8 @@ CLASSES = \
 	Bureaucrat \
 	AForm \
 	ShrubberyCreationForm \
+	RobotomyRequestForm \
+	PresidentialPardonForm \
 
 SRC += $(patsubst %,$(CLASSES_DIR)%,$(CLASSES))
 
