@@ -6,7 +6,7 @@
 /*   By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 21:59:50 by ibertran          #+#    #+#             */
-/*   Updated: 2024/08/22 16:56:04 by ibertran         ###   ########lyon.fr   */
+/*   Updated: 2024/08/23 04:01:28 by ibertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other.getName())
 {
 	*this = other;
 }
+
 /* DESTRUCTOR *************************************************************** */
 
 Bureaucrat::~Bureaucrat(void) {}

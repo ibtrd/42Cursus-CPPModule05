@@ -65,5 +65,3 @@ std::string	RobotomyRequestForm::getTarget(void) const
 {
 	return (this->_target);
 }
-
-/* ************************************************************************** */

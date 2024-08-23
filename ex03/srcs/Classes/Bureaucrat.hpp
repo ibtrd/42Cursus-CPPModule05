@@ -6,7 +6,7 @@
 /*   By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 21:59:34 by ibertran          #+#    #+#             */
-/*   Updated: 2024/08/22 14:46:38 by ibertran         ###   ########lyon.fr   */
+/*   Updated: 2024/08/23 04:03:28 by ibertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class Bureaucrat
 		Bureaucrat	&operator=(const Bureaucrat &);
 
 		std::string		getName(void) const;
-		int		getGrade(void) const;
+		int				getGrade(void) const;
 
 		void			upGrade(void);
 		void			downGrade(void);

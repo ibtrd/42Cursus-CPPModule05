@@ -59,5 +59,3 @@ std::string	PresidentialPardonForm::getTarget(void) const
 {
 	return (this->_target);
 }
-
-/* ************************************************************************** */

@@ -6,7 +6,7 @@
 /*   By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 17:22:27 by ibertran          #+#    #+#             */
-/*   Updated: 2024/08/22 15:04:48 by ibertran         ###   ########lyon.fr   */
+/*   Updated: 2024/08/23 04:02:54 by ibertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,3 @@ std::string	ShrubberyCreationForm::getTarget(void) const
 {
 	return (this->_target);
 }
-
-/* ************************************************************************** */
